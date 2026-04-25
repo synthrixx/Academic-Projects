@@ -3,7 +3,7 @@
 # -------------------------------
 # This file is used to make GitHub language statistics more accurate
 # for academic projects containing MATLAB, Simulink, LTspice, PDFs,
-# images, audio files, and generated GUI files.
+# images, audio files, and generated GUI/export files.
 
 # -------------------------------
 # Documentation and report files
@@ -22,27 +22,43 @@
 *.mlx linguist-language=MATLAB
 
 # -------------------------------
+# Arduino source file
+# -------------------------------
+# This file contains Arduino/C++ code, although it is saved as .txt.
+**/Arduino_Project_Code.txt linguist-language=C++
+
+# -------------------------------
 # MATLAB App Designer / Simulink files
 # -------------------------------
-# These files may contain internal XML/HTML-like structures.
-# They are project/model files, not manually written HTML or CSS code.
+# These files are project/model files, not manually written HTML/CSS code.
 *.mlapp linguist-generated
 *.slx linguist-generated
 
 # -------------------------------
-# LTspice simulation files
+# Tinkercad exported/saved webpage files
 # -------------------------------
-# LTspice .asc files may be incorrectly detected as AGS Script.
+# These are automatically downloaded webpage assets, not project source code.
+**/Tinkercad_link.html linguist-generated
+**/Tinkercad_link_files/** linguist-generated
+
+# -------------------------------
+# Generated web-like files
+# -------------------------------
+*.html linguist-generated
+*.htm linguist-generated
+*.css linguist-generated
+*.js linguist-generated
+
+# -------------------------------
+# LTspice simulation/schematic files
+# -------------------------------
+# GitHub does not normally show these as "LTspice".
+# .asc files are often detected as AGS Script because Linguist associates .asc with AGS Script.
+# Keep them excluded to avoid misleading language statistics.
 *.asc linguist-generated
 *.asy linguist-generated
 *.cir linguist-generated
 *.net linguist-generated
 
-# -------------------------------
-# Generated web-like files
-# -------------------------------
-# If any HTML/CSS files were generated automatically by MATLAB,
-# reports, exports, or documentation tools, exclude them from language stats.
-*.html linguist-generated
-*.htm linguist-generated
-*.css linguist-generated# Auto detect text files and perform LF normalization
+# Auto detect text files and perform LF normalization
+* text=auto
