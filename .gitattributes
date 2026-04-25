@@ -1,2 +1,48 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# -------------------------------
+# GitHub Linguist Configuration
+# -------------------------------
+# This file is used to make GitHub language statistics more accurate
+# for academic projects containing MATLAB, Simulink, LTspice, PDFs,
+# images, audio files, and generated GUI files.
+
+# -------------------------------
+# Documentation and report files
+# -------------------------------
+*.pdf linguist-documentation
+*.md linguist-documentation
+*.jpg linguist-documentation
+*.jpeg linguist-documentation
+*.png linguist-documentation
+*.wav linguist-documentation
+
+# -------------------------------
+# MATLAB source files
+# -------------------------------
+*.m linguist-language=MATLAB
+*.mlx linguist-language=MATLAB
+
+# -------------------------------
+# MATLAB App Designer / Simulink files
+# -------------------------------
+# These files may contain internal XML/HTML-like structures.
+# They are project/model files, not manually written HTML or CSS code.
+*.mlapp linguist-generated
+*.slx linguist-generated
+
+# -------------------------------
+# LTspice simulation files
+# -------------------------------
+# LTspice .asc files may be incorrectly detected as AGS Script.
+*.asc linguist-generated
+*.asy linguist-generated
+*.cir linguist-generated
+*.net linguist-generated
+
+# -------------------------------
+# Generated web-like files
+# -------------------------------
+# If any HTML/CSS files were generated automatically by MATLAB,
+# reports, exports, or documentation tools, exclude them from language stats.
+*.html linguist-generated
+*.htm linguist-generated
+*.css linguist-generated# Auto detect text files and perform LF normalization
