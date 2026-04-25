@@ -1,0 +1,29 @@
+// C++ code
+//
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(12,11,5,4,3,2);
+
+void setup()
+{
+  lcd.begin(16,2);
+}
+
+void loop()
+{
+  int read = analogRead(A0);
+  long voltage = map(read,0,1023,0,5000);
+  //float temperature = (voltage - 500) / 10.0;
+  //int temperature = (voltage - 500) / 10;
+  float true_temperature = (voltage - 500) / 10.0;
+  int temperature = round(true_temperature);
+  
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Temperature: ");
+  lcd.setCursor(0,1);
+  lcd.print(temperature);
+  lcd.print(" C degrees");
+  
+  delay(1000);
+}
